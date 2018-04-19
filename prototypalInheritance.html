@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <script>
+        function Person(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+
+        Person.prototype.getFullName = function () {
+            return this.firstName + ' ' + this.lastName+' ' +this.age+' '+this.rollNo;
+        }
+
+        function student(firstName, lastName, age, rollNo) {
+
+            Person.call(this, firstName, lastName);
+
+            this.age = age;
+            this.rollNo = rollNo;
+        }
+
+
+         student.prototype = Person.prototype;
+
+        var data1 = new student('rahul', 'biyani', 26, 222323);
+        
+
+        alert(data1.getFullName());
+
+    </script>
+</body>
+
+</html>
